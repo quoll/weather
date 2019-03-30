@@ -13,12 +13,13 @@ class App extends Component {
     }
 
     getLocation = () => {
+        let component = this;
         if(navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {
                 console.log(position);
                 console.log(position.coords.latitude);
                 console.log(position.coords.longitude);
-                this.setState({
+                component.setState({
                     lat: position.coords.latitude,
                     lng: position.coords.longitude,
                 });
