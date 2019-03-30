@@ -12,38 +12,17 @@ class App extends Component {
         this.getLocation();
     }
 
-    // getLocation = () => {
-    //     if (navigator.geolocation) {
-    //         navigator.geolocation.getCurrentPosition(displayLocationInfo);
-    //       }
-          
-    //       function displayLocationInfo(position) {
-    //         const lat = position.coords.latitude;
-    //         const lng = position.coords.longitude;
-          
-    //         console.log(`latitude: ${ lat } | longitude: ${ lng }`);
-
-    //       }
-
-    // }
-
     getLocation = () => {
-        function success(position) {
-            const lat  = position.coords.latitude;
-            const lng = position.coords.longitude;
-            // this.setState({
-            //     lat: lat,
-            //     lng: lng
-            // });
-            console.log(lat, lng);
-          }
-        
-          function error() {
-            console.log('Unable to retrieve your location');
-          }
-        
-          if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(success, error);
+        if(navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                console.log(position);
+                console.log(position.coords.latitude);
+                console.log(position.coords.longitude);
+                // this.setState({
+                //     lat: position.coords.latitude,
+                //     lng: position.coords.longitude,
+                // });
+            });
         }
     }
 
@@ -52,8 +31,8 @@ class App extends Component {
     return (
       <div className="App">
 
-        {/* {this.state.lat}
-        {this.state.lng} */}
+        <h4>{this.state.lat}</h4>
+        <h4>{this.state.lng}</h4>
 
       </div>
     );
