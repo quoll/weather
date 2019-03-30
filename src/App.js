@@ -3,24 +3,37 @@ import './App.css';
 
 class App extends Component {
 
+    // state = {
+    //     lat: "",
+    //     lng: ""
+    // }
 
-    componentDidMount = () => {
+    componentDidMount() {
+        this.getLocation();
+    }
+
+    getLocation = () => {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(displayLocationInfo);
           }
           
           function displayLocationInfo(position) {
-            const lng = position.coords.longitude;
             const lat = position.coords.latitude;
+            const lng = position.coords.longitude;
           
-            console.log(`longitude: ${ lng } | latitude: ${ lat }`);
+            console.log(`latitude: ${ lat } | longitude: ${ lng }`);
+            
           }
+
     }
 
+    
   render() {
     return (
       <div className="App">
 
+        {/* {this.state.lat}
+        {this.state.lng} */}
 
       </div>
     );
