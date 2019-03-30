@@ -18,10 +18,10 @@ class App extends Component {
                 console.log(position);
                 console.log(position.coords.latitude);
                 console.log(position.coords.longitude);
-                // this.setState({
-                //     lat: position.coords.latitude,
-                //     lng: position.coords.longitude,
-                // });
+                this.setState({
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude,
+                });
             });
         }
     }
