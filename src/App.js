@@ -19,9 +19,8 @@ class App extends Component {
             this.setState({
                 lat: position.coords.latitude,
                 lng: position.coords.longitude,
-        }); 
-  }
-)
+            }); 
+        })
     }
 
     apiCall = () => {
