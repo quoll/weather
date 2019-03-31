@@ -35,6 +35,10 @@ class App extends Component {
         <h4>Latitude: {this.state.lat}</h4>
         <h4>Longitude: {this.state.lng}</h4>
 
+        <div className="footer">
+            <a href="https://darksky.net/poweredby/">Powered by Dark Sky</a>
+        </div>
+
       </div>
     );
   }
