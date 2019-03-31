@@ -11,23 +11,26 @@ class App extends Component {
 
     componentDidMount() {
         this.getLocation();
+        // this.apiCall();
     }
 
     getLocation = () => {
-        let component = this;
-        if(navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position) {
-                // console.log(position);
-                // console.log(position.coords.latitude);
-                // console.log(position.coords.longitude);
-                component.setState({
-                    lat: position.coords.latitude,
-                    lng: position.coords.longitude,
-                });
-            });
-        }
+        navigator.geolocation.getCurrentPosition((position) => { 
+            this.setState({
+                lat: position.coords.latitude,
+                lng: position.coords.longitude,
+        }); 
+  }
+)
     }
 
+    apiCall = () => {
+        axios.get(`https://api.darksky.net/forecast/${process.env.REACT_APP_DARK_SKY_API}/${this.state.lat},${this.state.lng}`)
+        .then(res => {
+            const result = res.data;
+            console.log(result);
+        })
+    }
 
   render() {
     return (
