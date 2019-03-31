@@ -38,13 +38,13 @@ class App extends Component {
         .then(state => this.setState(state));
     }
 
-    // apiCall = () => {
-    //     axios.get(`https://api.darksky.net/forecast/${process.env.REACT_APP_DARK_SKY_API}/${this.state.lat},${this.state.lng}`)
-    //     .then(res => {
-    //         const result = res.data;
-    //         console.log(result);
-    //     })
-    // }
+    apiCall = () => {
+        axios.get(`https://api.darksky.net/forecast/${process.env.REACT_APP_DARK_SKY_API}/${this.state.lat},${this.state.lng}`)
+        .then(res => {
+            const result = res.data;
+            console.log(result);
+        })
+    }
 
   render() {
     return (
