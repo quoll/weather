@@ -13,7 +13,7 @@ class App extends Component {
 
     componentDidMount() {
         this.getLocation();
-        // this.apiCall();
+        this.apiCall();
     }
 
     getLocation = () => {
